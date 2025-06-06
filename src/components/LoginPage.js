@@ -1,11 +1,20 @@
+// LoginPage.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './SignupPage.css'; // your gradient styles
+import './SignupPage.css';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Normally you'd verify credentials here.
+    navigate('/home'); // Navigate to Home after login
+  };
+
   return (
     <div className="container-fluid vh-100 d-flex p-0">
-      {/* Left Image */}
       <div className="d-none d-md-block p-0" style={{ width: '840px' }}>
         <img
           src="/team.jpg"
@@ -15,7 +24,6 @@ const LoginPage = () => {
         />
       </div>
 
-      {/* Right Form */}
       <div className="d-flex align-items-center justify-content-center bg-gradient p-4" style={{ width: '600px' }}>
         <div className="w-75">
           <div className="text-center mb-4">
@@ -25,14 +33,14 @@ const LoginPage = () => {
             <p className="text-muted">Enter your credentials to access your account</p>
           </div>
 
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label fw-semibold text-black">Email</label>
-              <input type="email" className="form-control rounded-pill" placeholder="Your email" />
+              <input type="email" className="form-control rounded-pill" placeholder="Your email" required />
             </div>
             <div className="mb-4">
               <label htmlFor="password" className="form-label fw-semibold text-black">Password</label>
-              <input type="password" className="form-control rounded-pill" placeholder="Your password" />
+              <input type="password" className="form-control rounded-pill" placeholder="Your password" required />
             </div>
 
             <button type="submit" className="btn btn-primary w-100 rounded-pill mb-3">

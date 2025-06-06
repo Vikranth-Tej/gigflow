@@ -1,15 +1,14 @@
 import React from 'react';
-import './Home.css'; // We'll create this for additional styling
+import './Home.css';
 
 const Home = () => {
-  // Sample data - in a real app, this would come from props or API
   const dashboardData = {
     user: {
       name: "Nuraj group",
       organization: "OG"
     },
     stats: [
-      { title: "Employees", value: 24, link: "/employees" },
+      { title: "Employees", value: 24, link: "/people" },
       { title: "Hiring", value: 5, link: "/hiring" },
       { title: "Projects", value: 1, link: "/projects" }
     ],
@@ -23,12 +22,26 @@ const Home = () => {
 
   const maxPerformance = Math.max(...dashboardData.performance);
 
+  // Format today's date
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+
   return (
     <div className="home-container">
       {/* Welcome Header */}
       <header className="dashboard-header">
-        <h1>Welcome Back, {dashboardData.user.name}</h1>
-        <p className="org-badge">{dashboardData.user.organization} /</p>
+        <div className="header-left">
+          <h1>Welcome Back, {dashboardData.user.name}</h1>
+          <p className="org-badge">{dashboardData.user.organization}</p>
+        </div>
+        <div className="header-right">
+          <p className="calendar-date">{formattedDate}</p>
+        </div>
       </header>
       
       {/* Stats Cards */}

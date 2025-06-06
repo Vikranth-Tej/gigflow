@@ -7,10 +7,13 @@
 
 .navbar-nav .nav-link {
   font-size: 1rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.active-salary {
+/* Active page */
+.active-link {
   background-color: white;
+  color: #1273a3 !important;
   border-radius: 20px;
-  padding: 0 10px;
+  padding: 0 12px;
 }
