@@ -1,0 +1,49 @@
+/* SignupPage.css */
+
+/* Custom gradient background for the right panel */
+.bg-gradient {
+  background: linear-gradient(to top, #0a1a2a 0%, #1a3a5a 100%);
+}
+
+/* Form input styling */
+.form-control.bg-dark {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border-color: #2a4b6d !important;
+  color: white !important;
+}
+
+.form-control.bg-dark::placeholder {
+  color: #a0a0a0 !important;
+}
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(to right, #1a6ea0, #0d3a5a);
+  border: none;
+  padding: 10px;
+  font-weight: 500;
+}
+
+/* Social buttons */
+.btn-outline-light {
+  border-color: #2a4b6d;
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Text colors */
+.text-light {
+  color: #d1d1d1 !important;
+}
+
+/* Link styling */
+.text-info {
+  color: #4da6ff !important;
+}
+
+.text-info:hover {
+  color: #7ab8ff !important;
+}
